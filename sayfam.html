@@ -1,0 +1,34 @@
+<html>
+<head>
+<script>
+//en sonunda yükleme  barının yapabildim-----------------------------
+        var art = 0;
+        var yukleyici;
+        function dolguyukle() {
+            yukle();
+            yukleyici= setInterval(yukle, 50);
+        }
+
+        function yukle(){
+            var dolgunsn = document.getElementById("dolgu");
+            var cssozellik = document.createAttribute("style");
+            cssozellik.value = "background-color:aqua;height:10px;float:left;width:" + art + "px";
+            dolgunsn.setAttributeNode(cssozellik);
+            art++;
+            if (art==151) {
+                clearInterval(yukleyici);
+                
+            }
+        }
+        //------------------------------------------------------------------
+    </script>
+</head>
+<body>
+    <div id="kenar" style="border:1px solid black;width:150px;height:10px">
+    <div id="dolgu"></div><br>
+	<button id="btn" onclick="dolguyukle()">Yükle</button>
+
+</body>
+</html>
+
+
